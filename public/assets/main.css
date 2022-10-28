@@ -409,7 +409,8 @@ html {
 --------------------------------------------- */
 .inner{
 	margin:0 auto;
-	max-width: 1920px;
+	/* max-width: 1920px; */
+	max-width: 1360px;
 	width: 100%;
 }
 
@@ -802,6 +803,70 @@ textarea {
 	align-items: center;
 	justify-content: center;
 }
+.navbar-client{
+	margin-right: 24px;
+}
+.navbar-client .btn{
+	width: 165px;
+}
+
+/* Dropdown. */
+.dropdown{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+}
+.dropdown .dropdown-list{
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 22px;
+	width: 160px;
+	max-width: 160px;
+	border-radius: 16px;
+	background: #fff;
+	align-items: flex-start;
+	padding: 24px 0px;
+	box-shadow: 0px 16px 40px rgba(101, 112, 137, 0.08);
+	transition: all 0.5s ease;
+}
+.dropdown .dropdown-list.active{
+	display: flex;
+}
+.dropdown-list .dropdown-item{
+    display: flex;
+    width: 100%;
+    padding: 8px 24px;
+    align-items: center;
+    gap: 8px;
+	transition: all ease 0.5s;
+}
+.dropdown-list .dropdown-item:hover,
+.dropdown-list .dropdown-item:focus{
+	cursor: pointer;
+}
+.dropdown-list .dropdown-item:hover{
+	background-color: rgba(41, 44, 109, 0.05);;
+}
+.dropdown-list .dropdown-item .flag-txt{
+	text-transform: uppercase;
+}
+.flag{
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 20px;
+	width: 20px;
+}
+.flag.flag-en{background-image: url('./images/icons/en.svg');}
+.flag.flag-id{background-image: url('./images/icons/id.svg');}
+.flag.flag-th{background-image: url('./images/icons/th.svg');}
+.flag.flag-zh,.flag.flag-cn{background-image: url('./images/icons/zh.svg');}
+.flag.flag-ko{background-image: url('./images/icons/ko.svg');}
+.flag.flag-ja{background-image: url('./images/icons/ja.svg');}
+.flag.flag-vi{background-image: url('./images/icons/vi.svg');}
+
 
 /* Small menu. */
 .menu-toggle,
@@ -851,6 +916,29 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+/* Buttons
+--------------------------------------------- */
+.btn,
+a.btn{
+	color: var(--prime-white);
+	padding: 8px 36px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    background-color: var(--prime-55A);
+    border-radius: 24px;
+	transition: all ease .5s;
+}
+.btn:hover,
+.btn.active{
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #EC255A;;
+}
+.btn:disabled,
+.btn.disabled{
+	background-color: #E3E6EE;
 }
 
 /* Posts and pages

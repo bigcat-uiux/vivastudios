@@ -10,6 +10,7 @@ import NewsPage from "./Pages/News/NewsPage";
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   uri: 'http://www.sandbox.wpviva.com:8080/graphql',
+  // uri: 'https://clubthreesix.com/jemson/external/vivastudios/graphql',
   defaultOptions: {
     query: {
       errorPolicy: 'all'
