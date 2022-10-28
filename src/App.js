@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { Route, Routes } from "react-router-dom";
+import NavMenu from './Components/NavMenu/NavMenu';
+import HomePage from "./Pages/HomePage/HomePage";
+import AboutPage from "./Pages/About/AboutPage";
+import GamePage from "./Pages/Games/GamePage";
+import NewsPage from "./Pages/News/NewsPage";
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  uri: 'http://www.sandbox.wpviva.com:8080/graphql',
+  defaultOptions: {
+    query: {
+      errorPolicy: 'all'
+    },
+    mutate: {
+      errorPolicy: 'ignore'
+    }
+  }
+});
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <ApolloProvider client={client}>
+      <header>
+        <NavMenu component={NavMenu} />
       </header>
-    </div>
+      <main className="Wrap">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about-page" element={<AboutPage />} />
+          <Route path="/games" element={<GamePage />} />
+          <Route path="/news-page" element={<NewsPage />} />
+        </Routes>
+      </main>
+    </ApolloProvider>
   );
 }
 
