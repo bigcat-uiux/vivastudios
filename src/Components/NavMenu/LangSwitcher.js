@@ -1,7 +1,7 @@
 import React from "react";
 import { Query } from '@apollo/client/react/components'
 import gql from 'graphql-tag'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const LangSwitcher = () => (
     <Query query={gql`{
@@ -17,15 +17,15 @@ const LangSwitcher = () => (
                 
                 if(data){
                     return(
-                        <div className='navbar-multilang'>
-                        {
-                            data.languages.map((lang, key) => {
-                                return (
-                                    <ListLang  key={key} lang={lang.locale} slug={lang.slug}>{lang}</ListLang>
-                                )
-                            })
-                        }
-                         </div>
+                        <>
+                            {
+                                data.languages.map((lang, key) => {
+                                    return (
+                                        <ListLang  key={key} lang={lang.locale} slug={lang.slug}>{lang}</ListLang>
+                                    )
+                                })
+                            }
+                        </>
                     )
                 }
                 
@@ -38,8 +38,17 @@ const LangSwitcher = () => (
 
 function ListLang ({lang,slug, ...props}) {
     // let langChange = 'en';
+    
+
+    const handleClick = (slug) => {
+        // e.preventDefault();
+        console.log(slug)
+    }
     return (
-        <span id={slug} className='flag flag-'>{slug}</span>
+        <span id={slug} className='dropdown-item' onClick={() => handleClick({slug})}>
+            <span className={`flag flag-${slug}`}></span>
+            <span className="flag-txt">{slug}</span>
+        </span>
     )
 }
 

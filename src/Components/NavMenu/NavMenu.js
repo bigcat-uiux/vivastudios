@@ -1,50 +1,53 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Query } from '@apollo/client/react/components'
 import gql from 'graphql-tag'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import NavBrand from './NavBrand'
 import LangSwitcher from './LangSwitcher'
 
-const NavMenuQuery = () => (
+// MAIN_MENU
+// MAIN_MENU___ID
+
+const NavMenuQuery = (test) => (
     <Query query={gql`{
-        menuItems {
-            nodes {
-              label
-              id
-              locations
-              path
-              title
-              uri
-              url
-              order
-              parentDatabaseId
-              parentId
-              target
-              menuItemId
-              linkRelationship
-              isRestricted
-              cssClasses
-              connectedNode {
-                node {
-                  ... on Post {
-                    id
-                    title
-                    slug
-                  }
-                  ... on Page {
-                    id
-                    title
-                    slug
-                    isFrontPage
-                  }
+        menuItems(where: {location: MAIN_MENU___ID}, first: 5) {
+          nodes {
+            label
+            id
+            locations
+            path
+            title
+            uri
+            url
+            order
+            parentDatabaseId
+            parentId
+            target
+            menuItemId
+            linkRelationship
+            isRestricted
+            cssClasses
+            connectedNode {
+              node {
+                ... on Post {
+                  id
+                  title
+                  slug
+                }
+                ... on Page {
+                  id
+                  title
+                  slug
+                  isFrontPage
                 }
               }
             }
           }
-    }`}>
+        }
+      }`}>
         {
             ({loading, error, data}) => {
-                
+                console.log(test)
                 if(data){
                     return(
                         <>
@@ -80,6 +83,11 @@ function CustomLink ({to, children, ...props }){
 }
 
 const NavMenu = () => {
+    const [isActive, setActive] = useState(null);
+
+    const dropDownActivate = () => {
+        setActive(!isActive);
+    }
     return (
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
             <div className='inner'>
@@ -90,7 +98,7 @@ const NavMenu = () => {
                     </button>
                     <div className='collapse navbar-collapse' id='navbarDropdown'>
                         <ul className='navbar-nav'>
-                            <NavMenuQuery />
+                            <NavMenuQuery component={'en'}/>
                         </ul>
                     </div>
 
@@ -99,7 +107,14 @@ const NavMenu = () => {
                     <div className='navbar-client'>
                         <a href='#@' type='button' className='btn btn-signin'>Client's area</a>
                     </div>
-                    <LangSwitcher />
+                    <div className='navbar-multilang dropdown'>
+                        <div className='dropdown-selected' onClick={dropDownActivate}>
+                            <span>Please Select</span>
+                        </div>
+                        <div className={`dropdown-list ${isActive ? 'active': null}`}>
+                            <LangSwitcher />
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
