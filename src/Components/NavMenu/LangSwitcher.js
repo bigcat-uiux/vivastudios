@@ -37,7 +37,7 @@ const LangSwitcher = () => (
 )
 
 function ListLang ({lang,slug, ...props}) {
-    let langChange = 'en';
+    // let langChange = 'en';
     return (
         <span id={slug} className='flag flag-'>{slug}</span>
     )
