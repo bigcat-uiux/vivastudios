@@ -800,7 +800,7 @@ textarea {
 }
 .navbar-other{
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 	justify-content: center;
 }
 .navbar-client{
@@ -822,7 +822,8 @@ textarea {
 	display: none;
 	flex-direction: column;
 	position: absolute;
-	top: 22px;
+	top: 52px;
+	right: -2px;
 	width: 160px;
 	max-width: 160px;
 	border-radius: 16px;
@@ -847,11 +848,25 @@ textarea {
 .dropdown-list .dropdown-item:focus{
 	cursor: pointer;
 }
-.dropdown-list .dropdown-item:hover{
+.dropdown-list .dropdown-item:hover,
+.dropdown-item.active{
 	background-color: rgba(41, 44, 109, 0.05);;
 }
-.dropdown-list .dropdown-item .flag-txt{
+.dropdown-list .dropdown-item .flag-txt,
+.dropdown-selected > span.flag-wrap .flag-txt{
 	text-transform: uppercase;
+}
+.dropdown-selected{
+    width: 100%;
+    height: 100%;
+}
+.dropdown-selected > span.flag-wrap{
+	display: flex;
+    width: 100%;
+    padding: 8px 24px;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
 }
 .flag{
 	background-repeat: no-repeat;
