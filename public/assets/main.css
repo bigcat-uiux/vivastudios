@@ -665,6 +665,12 @@ textarea {
 	width: 100%;
 }
 
+/* Text
+--------------------------------------------- */
+.bold{
+	font-weight: 700;
+}
+
 /* Flex
 --------------------------------------------- */
 .flex{
@@ -982,6 +988,46 @@ a.btn{
 	margin: 0 0 1.5em;
 }
 
+.page-header{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.page-title{
+	margin: 0;
+    /* font-family: 'Poppins'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+    text-transform: uppercase;
+}
+.page-desc{
+	font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+.page-desc > p{
+	margin: 0;
+}
+/* Page: Games
+--------------------------------------------- */
+.games-list{
+	display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.all-games-card{
+	width: 210px;
+    height: 210px;
+}
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1181,4 +1227,19 @@ a.btn{
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* Width
+--------------------------------------------- */
+.w100{
+	width: 100%;
+}
+.w75{
+	width: 75%;
+}
+.w50{
+	width: 50%;
+}
+.w25{
+	width: 25%;
 }

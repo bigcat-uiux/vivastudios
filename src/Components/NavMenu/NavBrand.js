@@ -19,7 +19,10 @@ const NavBrand = () => (
                     const imgSrc = (data.siteLogo.sourceUrl !== null) ? data.siteLogo.sourceUrl : '';
                     return(
                         <Link to={'/'} className='navbar-brand'>
-                            <img src={imgSrc} />
+                            <img 
+                                src={imgSrc} 
+                                alt={data.siteLogo.altText}
+                            />
                         </Link>
                     )
                 }

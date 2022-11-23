@@ -1,6 +1,7 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import PageHeader from "../../Components/PostPage/PageHeader";
+import AllGamesList from "../../Components/PostPage/AllGamesList";
 
 
 const GET_NEWSPAGE_BY_ID = gql`
@@ -48,34 +49,35 @@ const ContentGamesPage = ({ page }) => {
     return (
         <>
             <PageHeader title={title} content={content}/>
-            <GamesPopular title={subTitle.title1}/>
+            {/* <GamesPopular title={subTitle.title1}/> */}
             <AllGames title={subTitle.title2}/>
         </>
     )
 }
 
-const GamesPopular = (props) => {
-    const {
-        title
-    } = props;
-    return(
-        <div className="latest-post">
-            <div className="sub-page-header">
-                <h1 className="sub-page-title">{title}</h1>
-            </div>
-        </div>
-    )
-}
+// const GamesPopular = (props) => {
+//     const {
+//         title
+//     } = props;
+//     return(
+//         <div className="games-popular">
+//             <div className="sub-page-header">
+//                 <h1 className="sub-page-title">{title}</h1>
+//             </div>
+//         </div>
+//     )
+// }
 
 const AllGames = (props) => {
     const {
         title
     } = props;
     return(
-        <div className="other-post">
+        <div className="all-games">
             <div className="sub-page-header">
                 <h1 className="sub-page-title">{title}</h1>
             </div>
+            <AllGamesList />
         </div>
     )
 
