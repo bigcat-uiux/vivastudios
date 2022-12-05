@@ -2,6 +2,7 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import NavBrand from './NavBrand';
+import {} from './navStyle.css';
 // import LangSwitcher from './LangSwitcher';
 
 const GET_MENUS_BY_ITEM = gql`

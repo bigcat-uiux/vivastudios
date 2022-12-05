@@ -1,0 +1,16 @@
+/*Page: Home*/
+.page.home-page header.header-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.page.home-page header.header-wrap .bg-light{
+    background-color: transparent;
+}
+.page.home-page header.header-wrap .navbar{
+    z-index: 10;
+}
+.page.home-page header.header-wrap .navbar a{
+    color: var(--prime-white);
+}

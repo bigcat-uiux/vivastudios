@@ -1,0 +1,146 @@
+/*Page: Home*/
+/* body.home-template .main-wrap{
+    margin-top: 7rem;
+    padding-top: 4rem;
+} */
+.vs-home-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 60px 70px;
+}
+.home-page .banner{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding-top: 12rem;
+    position: relative;
+    height: 716px;
+}
+.home-page .banner .inner.flex{
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.home-page .inner.flex .vs--hero-title,
+.home-page .inner.flex .vs--hero-desc{
+    color: var(--prime-white);
+}
+.home-page .inner.flex .vs--hero-title{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.home-page .inner.flex .vs--hero-desc{
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+/*Button*/
+.vs--inner-btn-wrp{
+    gap: 16px;
+}
+.vs--inner-btn-wrp .btn:not(.btn-transparent){
+    border-color: transparent;
+}
+
+/*Cards*/
+.vs--cards{
+    display: flex;
+    background-color:var(--prime-white);
+    box-shadow: 0px 16px 40px rgb(101 112 137 / 8%);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+/*Section: Page Header*/
+.home-page .sec-title{
+    color: #495057;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 52px;
+}
+
+.home-page .vs-sec-desc{
+    color: #ADB5BD;
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+/*Section: Third*/
+.third-section .vs--content{
+    display: flex;
+    flex-grow: 1;
+    width: 70%;
+}
+.third-section .vs--content:not(:nth-child(2)){
+    width: 15%;
+}
+
+/*Section: Fourth*/
+.fourth-section .vs-icon-grp{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.fourth-section .vs--icons-item{
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: 200px;
+    width: 21.5%;
+}
+.fourth-section .vs--icons-item > img{
+    height: 36px;
+    width: 36px;
+}
+.fourth-section .vs--icons-item > .vs--icons-lbl.lbl{
+    color: #495057;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+}
+.fourth-section .vs--icons-item > .vs-sec-desc{
+    color: #6C757D;
+    font-family: 'Merriweather';
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+}
+
+/*Section: Fifth*/
+.fifth-section .vs-prod-grp{
+    align-items: flex-start;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.fifth-section .vs--prod-item{
+    border-radius: 16px;
+    max-height: 496px;
+    width: 28%;
+}
+.fifth-section .vs--prod-item > img {
+    object-fit: cover;
+    width: 100%;
+}

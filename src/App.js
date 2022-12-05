@@ -13,10 +13,10 @@ import PostPage from "./Pages/PostPage";
 function App() {
   return (
     <ApolloProvider client={Client}>
-      <header>
+      <header className="header-wrap">
         <NavMenu component={NavMenu} />
       </header>
-      <main className="Wrap">
+      <main className="main-wrap">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-page" element={<AboutPage />} />
@@ -26,6 +26,9 @@ function App() {
           <Route path="/news/:slug" element={<PostPage />} />
         </Routes>
       </main>
+      <footer className="footer-wrap">
+        footer Here
+      </footer>
     </ApolloProvider>
   );
 }
