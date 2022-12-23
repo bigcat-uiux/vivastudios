@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const GET_HOME_LATEST_POST = gql `
     query MYLatestPost {
@@ -59,19 +59,21 @@ const PostCard = ({ post }) => {
       } = post;
 
       return (
-        <div className="vs--cards vs--latest-post w50">
-            {featuredImage ? (
-                <img
-                    src={featuredImage.node.sourceUrl}
-                    alt={featuredImage.node.altText}
-                    className="w50"
-                />
-            ) : null}
-            <div className="w50">
+        <div className="vs--cards vs--latest-post">
+            <div className="vs--post-img">
+                {featuredImage ? (
+                    <img
+                        src={featuredImage.node.sourceUrl}
+                        alt={featuredImage.node.altText}
+                    />
+                ) : null}
+            </div>
+            <div className="post-details">
                 <Link to={`/news/${slug}`}>
-                    <h3>{title}</h3>
+                    <h3 className="post-title">{title}</h3>
                 </Link>
                 <Link to={`/news/${slug}`} className='btn'>Learn more</Link>
+                <span className="post-date">February 20, 2022</span>
             </div>
         </div>
       )

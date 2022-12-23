@@ -44,7 +44,7 @@ const EightSection = () => {
 }
 
 const EightSecLayout = (props) => {
-    if(props.section.hpsFthShowHideBtnSect !== 'yes'){
+    if(props.section.hpsEghtShowHideBtnSect !== 'yes'){
         return (
             <section className="eight-section vs-home-sec" id={props.section.hpsEghtId}>
                 <div className="inner">
@@ -59,25 +59,27 @@ const EightSecLayout = (props) => {
 }
 
 const SectionHeader = (props) => {
-    return (
-        <div className="vs-sec-header">
-            {
-                props.title ? (
-                    <h1 className="flex flex-center sec-title txt-upper">{props.title}</h1>
-                ) : null
-            }
-            {
-                props.desc ? (
-                    <span className="vs-sec-desc flex flex-center" dangerouslySetInnerHTML={{__html:props.desc}} />
-                ) : null
-            }
-        </div>
-    )
+    if(props.title !== null && props.desc.length > 0){
+        return (
+            <div className="vs-sec-header">
+                {
+                    props.title ? (
+                        <h1 className="flex flex-center sec-title txt-upper">{props.title}</h1>
+                    ) : null
+                }
+                {
+                    props.desc ? (
+                        <span className="vs-sec-desc flex flex-center" dangerouslySetInnerHTML={{__html:props.desc}} />
+                    ) : null
+                }
+            </div>
+        )
+    }
 }
 
 const SectionContent = (props) => {
     return (
-        <div className="vs-icon-grp flex flex-center">
+        <div className="vs-icon-grp flex align-center justify-between">
         {
             props.group.map((icons, key) => {
                 return (

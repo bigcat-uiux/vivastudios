@@ -52,6 +52,7 @@ const CPTPPost = (props) => {
                             <img
                                 src={feat.featuredImage.node.sourceUrl}
                                 alt={feat.featuredImage.node.altText} 
+                                key={key}
                             />
                         )
                     }else{

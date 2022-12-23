@@ -34,9 +34,9 @@ const GET_HOME_QUERY = gql `
 const HomePage = () => {
 
     useEffect(() => {
-        document.body.classList.add('home-template', 'home-page', 'page')
+        document.body.classList.add('home-template', 'home-page')
         return () => {
-            document.body.classList.remove('home-template', 'home-page', 'page')
+            document.body.classList.remove('home-template', 'home-page')
         }
     }, []);
 

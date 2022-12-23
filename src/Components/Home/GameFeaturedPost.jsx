@@ -53,23 +53,23 @@ const FeaturedPostCPT = (props) =>{
         <div className="featuredSwiper">
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={50}
-                slidesPerView={3}
-                navigation
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+                spaceBetween={12}
+                slidesPerView={'auto'}
+                centeredSlides={true}
+                grabCursor={true}
+                className="vs-icon-grp vs-tile-swiper"
             >
             {
                 CPTNodes.map((feat, key) => {
                     if(feat.featuredPost.setFeaturedPost === true){
                         return(
                             <SwiperSlide key={key}>
-                                <img
-                                    src={feat.featuredImage.node.sourceUrl}
-                                    alt={feat.featuredImage.node.altText} 
-                                />
+                                <div className="vs--icons-item tile">
+                                    <img
+                                        src={feat.featuredImage.node.sourceUrl}
+                                        alt={feat.featuredImage.node.altText} 
+                                    />
+                                </div>
                             </SwiperSlide>
                         )
                     }else{

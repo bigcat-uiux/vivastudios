@@ -1,16 +1,30 @@
 /*Page: Home*/
-.page.home-page header.header-wrap{
+.home-page header.header-wrap{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 }
-.page.home-page header.header-wrap .bg-light{
-    background-color: transparent;
-}
-.page.home-page header.header-wrap .navbar{
+.home-page header.header-wrap .navbar{
     z-index: 10;
 }
-.page.home-page header.header-wrap .navbar a{
+.home-page header.header-wrap .navbar a{
     color: var(--prime-white);
 }
+.home-page header.header-wrap .navbar{
+    padding: var(--spacing-16);
+}
+.home-page header.header-wrap .navbar .collapse.active .navbar-nav a{
+    color: var(--second-57D)
+}
+.home-page header.header-wrap .navbar .collapse.active .navbar-nav li.active a{
+    color: var(--prime-white)
+}
+
+@media (min-width: 767.5px){
+    .home-page header.header-wrap .bg-light{
+        background-color: transparent;
+    }
+}
+@media (min-width: 1023.5px){}
+@media (min-width: 1365.5px){}

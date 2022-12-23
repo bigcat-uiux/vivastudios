@@ -9,6 +9,8 @@ import GamePage from "./Pages/Games/GamePage";
 import GameSlugContent from "./Pages/Games/GameSlugContent";
 import NewsPage from "./Pages/News/NewsPage";
 import PostPage from "./Pages/PostPage";
+import FooterComponent from "./Components/Footer/FooterComponent";
+
 
 function App() {
   return (
@@ -18,16 +20,16 @@ function App() {
       </header>
       <main className="main-wrap">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about-page" element={<AboutPage />} />
-          <Route path="/games" element={<GamePage />} />
-          <Route path="/games/:slug" element={<GameSlugContent />} />
-          <Route path="/news" element={<NewsPage/>} />
-          <Route path="/news/:slug" element={<PostPage />} />
+          <Route path="/vivatest" element={<HomePage />} />
+          <Route path="/vivatest/about-page" element={<AboutPage />} />
+          <Route path="/vivatest/games" element={<GamePage />} />
+          <Route path="/vivatest/games/:slug" element={<GameSlugContent />} />
+          <Route path="/vivatest/news" element={<NewsPage/>} />
+          <Route path="/vivatest/news/:slug" element={<PostPage />} />
         </Routes>
       </main>
       <footer className="footer-wrap">
-        footer Here
+        <FooterComponent />
       </footer>
     </ApolloProvider>
   );

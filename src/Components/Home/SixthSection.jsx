@@ -53,26 +53,43 @@ const SixthSecLayout = (props) => {
 }
 
 const SectionHeader = (props) => {
+    if(props.title !== null && props.desc.length > 0){
+        return (
+            <div className="vs-sec-header">
+            {
+                props.title ? (
+                    <h1 className="flex flex-center sec-title txt-upper">{props.title}</h1>
+                ) : null
+            }
+            {
+                props.desc ? (
+                    <span className="vs-sec-desc flex flex-center" 
+                    dangerouslySetInnerHTML={{__html:props.desc}} />
+                ) : null
+            }
+            </div>
+        )
+    }
+}
+
+const SectionContent = (props) => {
     return (
-        <div className="vs-sec-header">
-        {
-            props.title ? (
-                <h1 className="flex flex-center sec-title txt-upper">{props.title}</h1>
-            ) : null
-        }
-        {
-            props.desc ? (
-                <span className="vs-sec-desc flex flex-center" 
-                dangerouslySetInnerHTML={{__html:props.desc}} />
-            ) : null
-        }
-        </div>
+        <>
+            <HomeLatestPost />
+            { props.button === 'yes' ? (
+                <div className="btnWrap flex flex-center">
+                    <SectionBTN />
+                </div>
+            ) : ''}
+        </>
     )
 }
 
-const SectionContent = () => {
+const SectionBTN = () => {
     return (
-        <HomeLatestPost />
+        <>
+            <button className="btn">View All</button>
+        </>
     )
 }
 

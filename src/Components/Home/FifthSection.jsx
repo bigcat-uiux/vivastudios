@@ -66,21 +66,23 @@ const FifthSecLayout = (props) => {
 }
 
 const SectionHeader = (props) => {
-    return (
-        <div className="vs-sec-header">
-        {
-            props.title ? (
-                <h1 className="flex flex-center sec-title txt-upper">{props.title}</h1>
-            ) : null
-        }
-        {
-            props.desc ? (
-                <span className="vs-sec-desc flex flex-center" 
-                dangerouslySetInnerHTML={{__html:props.desc}} />
-            ) : null
-        }
-        </div>
-    )
+    if(props.title !== null && props.desc.length > 0){
+        return (
+            <div className="vs-sec-header">
+            {
+                props.title ? (
+                    <h1 className="flex flex-center sec-title txt-upper">{props.title}</h1>
+                ) : null
+            }
+            {
+                props.desc ? (
+                    <span className="vs-sec-desc flex flex-center" 
+                    dangerouslySetInnerHTML={{__html:props.desc}} />
+                ) : null
+            }
+            </div>
+        )
+    }
 }
 
 const SectionContent = ({ group, button }) => {
@@ -99,6 +101,12 @@ const SectionContent = ({ group, button }) => {
                                                 alt={prod.featuredImage.node.altText} 
                                             />
                                         ) : null}
+                                        <div className="vs--hidden-prod">
+                                            <div className="vs--hidden-btn flex flex-column justify-center">
+                                                <button className="btn">Play Details</button>
+                                                <button className="btn btn-transparent">view Demo</button>
+                                            </div>
+                                        </div>
                                 </div>
                             )
                         })
