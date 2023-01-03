@@ -17,10 +17,14 @@
     font-style: normal;
     font-weight: 700;
 }
-
-.txt-upper{
-	text-transform: uppercase;
+.normal{
+    font-style: normal;
+    font-weight: 400;
 }
+
+.txt-upper{text-transform: uppercase;}
+.txt-capitalize{text-transform: capitalize;}
+
 .txt-warning{
 	color: var(--prime-545);
 }
@@ -33,18 +37,37 @@
 	line-height: 18px;
 }
 
+.font-merriweather{font-family: 'Merriweather', serif;}
+.font-Poppins{font-family: 'Poppins', serif;}
+
 .txt-white{
 	color: var(--prime-white) !important;
+}
+.txt-057{
+	color: var(--second-057)!important;
+}
+.txt-57D{
+	color: var(--second-57D);
+}
+
+.txt-meduim{
+	font-size: 24px !important;
+	line-height: 36px !important;
+}
+.txt-small{
+	font-size: 16px;
+	line-height: 24px;
+}
+.txt-xsm{
+	font-size: 12px;
+	line-height: 24px;
 }
 
 /* Background
 --------------------------------------------- */
-.bg-light{
-	background-color: var(--prime-white);
-}
-.bg-gray{
-	background-color: var(--prime-light);
-}
+.bg-light{background-color: var(--prime-white);}
+.bg-gray{background-color: var(--prime-light);}
+.bg-853{background-color: var(--second-853);}
 .bg{
     position: absolute;
     width: 200vw;
@@ -564,6 +587,17 @@ main.main-wrap{
 
 /* Page: Games
 --------------------------------------------- */
+.game-wrap{
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.game-wrap.w12{
+	padding-left: 0;
+	padding-right: 0;
+}
+.game-wrap .page-title > a{
+	text-decoration: none;
+}
 .games-list{
 	display: flex;
     gap: 20px;
@@ -576,6 +610,66 @@ main.main-wrap{
 .all-games-card{
 	width: 210px;
     height: 210px;
+}
+.game-wrap .page-content{
+	gap: calc(var(--spacing-56) - var(--spacing-2) - var(--spacing-4));
+}
+.game-wrap .page-image{
+	height: 457px;
+	width: 100%;
+}
+.game-wrap .page-image img{
+	border-radius: 16px;
+	object-fit: cover;
+    height: 100%;
+	width: 100%;
+}
+.game-wrap .stats-wrap{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* gap: 16px; */
+    width: 80%;
+}
+.game-wrap .games-grp{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.game-wrap .btn-group .btn-transparent{
+	background-color: transparent !important;
+	border: 1px solid var(--second-853) !important;
+	color: var(--second-853);
+	text-decoration: none;
+}
+.game-wrap .btn-group .btn-transparent:hover{
+	background-color:  rgba(22, 24, 83, 0.16) !important;
+}
+.game-screenShot{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 24px;
+}
+.game-screenShot .game-img-ss span{
+	width: 287px;
+    height: 100%;
+    border-radius: 8px;
+}
+.game-screenShot .game-img-ss span img{
+	border-radius: 8px;
+	height: 162px;
+	object-fit: cover;
+	width: 100%;
+}
+.game-wrap .game-about{
+	position: relative;
+}
+.game-wrap .game-about .bg{
+	left: -100vw;
 }
 
 /*Tiles*/
