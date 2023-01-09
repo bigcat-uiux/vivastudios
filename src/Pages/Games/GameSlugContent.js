@@ -1,11 +1,14 @@
 import React, {useState} from "react";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
+import { DefaultPlayer as Video } from 'react-html5video';
+import 'react-html5video/dist/styles.css';
 import { useParams } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import Modal from "../../Components/Modal/modal";
 import {} from "../../Components/Modal/modal.css";
-
+import GameSingleFeaturedPost from "../../Components/PostPage/GameSingleFeaturedPost";
+import GameScreenShot from "../../Components/PostPage/GameScreenShot";
 
 const GET_GAMES_BY_URI = gql`
     query GamesContent($slug: ID!) {
@@ -77,6 +80,10 @@ const GameSlugContent = (props) => {
                 ) : (
                     <GameContent key={data.game.databaseId} post={data.game}  />
                 )}
+                <div className="post-featured">
+                    <h3 className="bold txt-meduim txt-capitalize font-poppins">Feature</h3>
+                    <GameSingleFeaturedPost />
+                </div>
             </div>
         </section>
     )
@@ -86,35 +93,36 @@ const GameContent = (props) => {
     const FeatImg = props.post.featuredImage;
 
     const [openModal, setOpenModal] = useState(false);
-    console.log(props.post.games.gameDevices)
+    let download = '';
+    
+    if(props.post.games.guid !== undefined){
+        download = <Link to={props.post.games.gameDlInfo.guid} className="btn btn-transparent" target="_blank" download>Download Info</Link>
+    }
 
     return (
         <article className="post-article inner">
             {
                 <div className="page-header align-start">
                     <h2 className="page-title font-Poppins txt-meduim bold">
-                        <Link to={`/games`} className="txt-057">{props.post.title}</Link>
+                        <Link to={`/vivatest/games`} className="txt-057">{props.post.title}</Link>
                     </h2>
                 </div>
             }
             <div className="page-content flex flex-column">
                 <div className="flex-row">
-                    <div className="flex align-start flex-column w12 w-md-6 gap-24">
+                    <div className="flex align-start flex-column w12 w-lg-6 gap-24">
                         <div className="page-image">
-                            <img
-                                src={FeatImg.node.sourceUrl}
-                                alt={FeatImg.node.altText} 
-                            />
+                            <GameImage gameSetImage={props.post.games.gamesScreenshot}/>
                         </div>
                         <div className="btn-group flex gap-16">
                             <button 
                                 className="btn"
                                 onClick={() => setOpenModal(true)}
                             >Play demo</button>
-                            <Link to={props.post.games.gameDlInfo.guid} className="btn btn-transparent" target="_blank" download>Download Info</Link>
+                            { download }
                         </div>
                     </div>
-                    <div className="w12 w-md-6 flex flex-column gap-24">
+                    <div className="w12 w-lg-6 flex flex-column gap-24">
                         {
                             <div className="font-merriweather normal txt-small txt-57D" 
                                 dangerouslySetInnerHTML={{__html: props.post.content}}
@@ -140,13 +148,13 @@ const GameContent = (props) => {
                 <div className="game-screenShot">
                     <span className="bold txt-meduim txt-capitalize font-poppins">Game Screenshot</span>
                     <div className="game-img-ss flex align-start gap-8">
-                        <GameScreenShotItem gameScreen={props.post.games.gamesScreenshot}/>
+                        <GameScreenShot gameScreen={props.post.games.gamesScreenshot}/>
                     </div>
                 </div>
                 <div className="game-about">
                     <div className="bg bg-853"></div>
-                    <span className="bold txt">About the Game</span>
-                    {/* <AboutGame gameVideo={props.post.games.gamesVid}/> */}
+                    <span className="bold txt txt-meduim txt-capitalize font-poppins">About the Game</span>
+                    <AboutGame gameVideo={props.post.games.gamesVid} poster={FeatImg.node.sourceUrl}/>
                 </div>
             </div>
             <Modal 
@@ -187,32 +195,53 @@ const GameSettings = (props) => {
     )
 }
 
-const GameScreenShotItem = (props) => {
+// const GameScreenShotItem = (props) => {
+//     return (
+//         <>
+//             {
+//                 props.gameScreen.map((img, index) => (
+//                     <span key={index}>
+//                         <img
+//                             src={img.sourceUrl}
+//                             alt={img.altText} 
+//                         />
+//                     </span>
+//                 ))
+//             }
+//         </>
+//     )
+// }
+
+const AboutGame = (props) => {
     return (
-        <>
-            {
-                props.gameScreen.map((img, index) => (
-                    <span key={index}>
-                        <img
-                            src={img.sourceUrl}
-                            alt={img.altText} 
-                        />
-                    </span>
-                ))
-            }
-        </>
+        <div className="game-player-wrap relative">
+            <Video 
+                autoPlay={false}
+                poster={props.poster}
+                controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+            >
+                <source src={props.gameVideo} type="video/mp4" />
+            </Video>
+        </div>
     )
 }
 
-// const AboutGame = (props) => {
-//     return (
-//         <div className="game-player-wrap">
-//             <ReactPlayer 
-//                 className="game-player"
-//                 controls url={props.gameVideo}
-//             />
-//         </div>
-//     )
-// }
+const GameImage = (props) => {
+    return (
+        <>
+            {props.gameSetImage.map((img, index) => {
+                if (index === 0) {
+                return <img key={index}
+                    src={img.sourceUrl}
+                    alt={img.altText} 
+                />;
+                }
+        
+                // 👇️ render nothing
+                return null;
+            })}
+        </>
+    )
+}
 
 export default GameSlugContent;

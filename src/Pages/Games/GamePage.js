@@ -45,7 +45,6 @@ const GamePage = () => {
 }
 
 const ContentGamesPage = ({ page }) => {
-    console.log(page)
     const {
       title,
       content,

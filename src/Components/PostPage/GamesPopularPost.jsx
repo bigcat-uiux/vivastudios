@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -12,17 +13,17 @@ const GET_GAMES_POPULAR_POST = gql`
     query GamesPopularPost {
         games(where: {orderby: {field: SLUG, order: ASC}}) {
             nodes {
-            slug
-            title
-            gamesPopularPost {
-                setPopularPost
-            }
-            featuredImage {
-                node {
-                altText
-                sourceUrl
+                slug
+                title
+                gamesPopularPost {
+                    setPopularPost
                 }
-            }
+                featuredImage {
+                    node {
+                        altText
+                        sourceUrl
+                    }
+                }
             }
         }
     }
@@ -59,13 +60,12 @@ const CPTPPost = (props) => {
     }, [isMobile]);
     return (
         <div className="popularpost games-list">
-            {isMobile ? <GamesMobileSlider /> : <GamesTabletToDesktopSlider postGames={CPTNodes}/>}
+            {isMobile ? <GamesMobileSlider postGames={CPTNodes}/> : <GamesTabletToDesktopSlider postGames={CPTNodes}/>}
         </div>
     )
 }
 
 const GamesTabletToDesktopSlider = (postGames) => {
-    console.log(postGames)
     return (
         <>
             <Swiper
@@ -81,29 +81,35 @@ const GamesTabletToDesktopSlider = (postGames) => {
                             return (
                                 <SwiperSlide key={key}>
                                     { (key % 2) ? 
-                                        <div className="tiles small-tiles">
-                                            <img
-                                                src={feat.featuredImage.node.sourceUrl}
-                                                alt={feat.featuredImage.node.altText} 
-                                                key={key}
-                                            />
-                                        </div>
+                                        <Link to={`/games/${feat.slug}`}>
+                                            <div className="tiles small-tiles">
+                                                <img
+                                                    src={feat.featuredImage.node.sourceUrl}
+                                                    alt={feat.featuredImage.node.altText} 
+                                                    key={key}
+                                                />
+                                            </div>
+                                        </Link>
                                         : '' }
                                 </SwiperSlide>
                             )
                         }else{
                             return (
                                 <SwiperSlide key={key}>
-                                <div className="tiles big-tiles">
-                                    <img
-                                        src={feat.featuredImage.node.sourceUrl}
-                                        alt={feat.featuredImage.node.altText} 
-                                        key={key}
-                                    />
-                                </div>
+                                    <Link to={`/games/${feat.slug}`}>
+                                        <div className="tiles big-tiles">
+                                            <img
+                                                src={feat.featuredImage.node.sourceUrl}
+                                                alt={feat.featuredImage.node.altText} 
+                                                key={key}
+                                            />
+                                        </div>
+                                    </Link>
                                 </SwiperSlide>
                             )
                         }
+                    }else{
+                        return null;
                     }
                 })
                 // if(key > 0 && key < 7) {
@@ -132,25 +138,37 @@ const GamesTabletToDesktopSlider = (postGames) => {
     )
 }
 
-const GamesMobileSlider = () => {
+const GamesMobileSlider = (postGames) => {
     return (
         <>
-            
-            {/* {
-                CPTNodes.map((feat, key) => {
-                    if(feat.gamesPopularPost.setPopularPost === true){
-                        return (
-                //             <img
-                //                 src={feat.featuredImage.node.sourceUrl}
-                //                 alt={feat.featuredImage.node.altText} 
-                //                 key={key}
-                //             />
-                        )
-                    }else{
-                        return null;
-                    }
-                })
-            } */}
+            <Swiper
+                modules={[Navigation, Pagination,  A11y]}
+                spaceBetween={24}
+                slidesPerView={"auto"}
+                className="vs-icon-grp vs-tile-swiper"
+            >
+                {
+                    postGames.postGames.map((feat, key) => {
+                        if(feat.gamesPopularPost.setPopularPost === true){
+                            return (
+                                <SwiperSlide key={key}>
+                                    <Link to={`/games/${feat.slug}`}>
+                                        <div className="tiles big-tiles">
+                                            <img
+                                                src={feat.featuredImage.node.sourceUrl}
+                                                alt={feat.featuredImage.node.altText} 
+                                                key={key}
+                                            />
+                                        </div>
+                                    </Link>
+                                </SwiperSlide>
+                            )
+                        }else{
+                            return null;
+                        }
+                    })
+                }
+            </Swiper>
         </>
     )
 }
