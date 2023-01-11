@@ -26,6 +26,7 @@
 .home-page .sec-title,
 .home-page .page-content > p,
 .fourth-section .vs--icons-item .vs--icons-lbl.lbl{
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 700;
 }
@@ -234,7 +235,7 @@
 }
 .vs--icons-lbl.lbl{
     color: var(--second-57D);
-    font-family: 'Merriweather', serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 9px;
@@ -446,6 +447,7 @@
 }
 .seven-section .lbl{
     position: relative;
+    font-family: 'Poppins', sans-serif;
 }
 .seven-section .lbl .txt-option{
     position: absolute;
@@ -754,6 +756,7 @@
     }
     .home-page .vs-sec-desc,
     .home-page .vs-sec-desc > p{
+        font-family: 'Poppins', sans-serif;
         font-size: 16px;
         line-height: 32px;
     }
