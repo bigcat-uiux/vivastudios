@@ -16,7 +16,8 @@ const Modal = ({open, onClose}) => {
                         </p>
                     </div>
                     <div className="vs-modal---body">
-                        Sample Lng po
+                        <div dangerouslySetInnerHTML={{__html:"<iframe src='https://game-service.viva-game.com/game-sessions/demo?gameDeploymentID=m88s-ArcticSky-9600' />"}}/>
+                        {/* <iframe  src="https://game-service.viva-game.com/game-sessions/demo?gameDeploymentID=m88s-ArcticSky-9600" ></iframe> */}
                     </div>
                 </div>
             </div>

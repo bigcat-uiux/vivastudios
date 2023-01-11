@@ -101,13 +101,15 @@ const SectionContent = ({image, icon, button}) => {
                 <div className="vs-icon-grp">
                     {
                         icon.map((icon, key) => {
-                            if(key <= 3)
+                            if(key <= 3){
                                 return(
                                     <div className="vs--icons-item" key={key}>
                                         <Icons icon={icon}/>
                                     </div>
                                 )
-                            
+                            }else{
+                                return '';
+                            }
                         })
                     }
                 </div>
@@ -127,12 +129,15 @@ const SectionContent = ({image, icon, button}) => {
                 <div className="vs-icon-grp">
                         {
                             icon.map((icon, key) => {
-                                if(key >= 4)
+                                if(key >= 4){
                                     return(
                                         <div className="vs--icons-item" key={key}>
                                             <Icons icon={icon}/>
                                         </div>
                                     )
+                                }else{
+                                    return '';
+                                }
                                 
                             })
                         }

@@ -4,6 +4,12 @@ import LatestPostList from "../../Components/PostPage/LatestPostList";
 import PageHeader from "../../Components/PostPage/PageHeader";
 import NewsOtherPage from "../../Components/PostPage/NewsOtherPage";
 
+/**
+ * Local: cG9zdDozNA==
+ * Live: cG9zdDoxODQy
+ */
+
+
 const GET_NEWSPAGE_BY_ID = gql`
     query MyPage{
         page(id: "cG9zdDozNA==") {

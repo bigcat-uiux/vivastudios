@@ -4,6 +4,11 @@ import PageHeader from "../../Components/PostPage/PageHeader";
 import AllGamesList from "../../Components/PostPage/AllGamesList";
 import GamesPopularPost from "../../Components/PostPage/GamesPopularPost";
 
+/**
+ * Local: cG9zdDoyMQ==
+ * Live: cG9zdDoxODM4
+ */
+
 const GET_NEWSPAGE_BY_ID = gql`
     query MyPage{
         page(id: "cG9zdDoyMQ==") {
@@ -40,7 +45,6 @@ const GamePage = () => {
 }
 
 const ContentGamesPage = ({ page }) => {
-    console.log(page)
     const {
       title,
       content,

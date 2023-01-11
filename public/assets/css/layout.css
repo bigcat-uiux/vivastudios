@@ -581,6 +581,24 @@ textarea {
 	margin: 0!important;
 }
 
+/* Gap
+--------------------------------------------- */
+.gap-2{gap: var(--spacing-2)}
+.gap-4{gap: var(--spacing-4)}
+.gap-8{gap: var(--spacing-8)}
+.gap-12{gap: var(--spacing-12)}
+.gap-16{gap: var(--spacing-16)}
+.gap-20{gap: var(--spacing-20)}
+.gap-24{gap: var(--spacing-24)}
+.gap-28{gap: var(--spacing-28)}
+.gap-32{gap: var(--spacing-32)}
+.gap-40{gap: var(--spacing-40)}
+.gap-48{gap: var(--spacing-48)}
+.gap-56{gap: var(--spacing-56)}
+.gap-64{gap: var(--spacing-64)}
+.gap-72{gap: var(--spacing-72)}
+.gap-80{gap: var(--spacing-80)}
+
 
 /* Form
 --------------------------------------------- */
