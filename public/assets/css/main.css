@@ -436,6 +436,8 @@
 --------------------------------------------- */
 .btn,
 a.btn{
+	font-family: 'Poppins', sans-serif;
+	text-transform: capitalize;
 	color: var(--prime-white);
 	padding: 8px 36px;
     font-style: normal;
@@ -445,6 +447,7 @@ a.btn{
     background-color: var(--prime-55A);
     border-radius: 24px;
 	transition: all ease .5s;
+	border: none;
 }
 .btn:hover,
 .btn.active{
@@ -457,6 +460,8 @@ a.btn{
 .btn-transparent{
 	background-color: transparent;
 	border-color: var(--prime-white);
+	border: none;
+	outline: 1px solid var(--prime-white);
 }
 
 /*--------------------------------------------------------------
@@ -579,7 +584,11 @@ main.main-wrap{
     justify-content: space-between;
     align-items: flex-start;
     padding: 0;
-    height: 136px;
+    /* height: 136px;
+		disabled height for the fix value
+		instead of fixed height do grid-gap
+	*/
+	grid-gap: 32px;
 	width: 65%;
 }
 .post-details a{
@@ -1083,3 +1092,10 @@ ul.widget > li {
 	}
 }
 @media (min-width: 1365.5px){}
+
+@media (hover: hover) {
+	.btn-transparent:hover {
+		border: none;
+		outline: none;
+	}
+}
