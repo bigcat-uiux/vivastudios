@@ -616,6 +616,36 @@ textarea {
 	line-height: 15px;
 	margin-bottom: 0.5rem;
 }
+.form-group.error{
+	position: relative;
+}
+.form-group.error::before{
+	background: url('../images/main-icons/alert-circle.png') no-repeat;
+	display: block;
+	content: '';
+	position: absolute;
+	height: 20px;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	transform: translate(-5px, 37px);
+	width: 20px;
+}
+.form-group.error input{
+	border-color: #DC3545 !important;
+}
+.form-group.primary input{
+	border-color: #198754 !important;
+}
+.error-txt{
+	color: var(--prime-545);
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	margin-top: 4px;
+}
 
 /* Flex
 --------------------------------------------- */
