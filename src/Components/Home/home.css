@@ -308,7 +308,7 @@
         use `grid-gap` instead
     */
     grid-gap: 16px;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     margin-bottom: 50px;
     width: 100%;
@@ -317,7 +317,8 @@
     border-radius: 16px;
     max-height: 54.933vw;
     position: relative;
-    width: 47%;
+    /* width: 47%; */
+    width: 394px;
     cursor: pointer;
     transition: all ease .5s;
 }
@@ -672,7 +673,8 @@
     }
     .fifth-section .vs--prod-item{
         max-height: 38.151vw;
-        width: 31%;
+        /* width: 31%; */
+        width: 394px;
     }
     .fifth-section .vs--prod-item > img{
         height: 38.151vw;
@@ -828,7 +830,8 @@
     }
     .fifth-section .vs--prod-item{
         max-height: 48.485vw;
-        width: 31.5%;
+        /* width: 31.5%; */
+        width: 394px;
     }
     .fifth-section .vs--prod-item > img {
         height: 48.485vw;
@@ -868,7 +871,8 @@
     /*Section: Fifth*/
     .fifth-section .vs--prod-item{
         max-height: 496px;
-        width: 32.33%;
+        /* width: 32.33%; */
+            width: 394px;
     }
     .fifth-section .vs--prod-item > img {
         height: 496px;

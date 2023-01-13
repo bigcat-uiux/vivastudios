@@ -444,7 +444,8 @@ a.btn{
     font-weight: 700;
     font-size: 14px;
     line-height: 32px;
-    background-color: var(--prime-55A);
+    /* background-color: var(--prime-55A); */
+	background-color: #E31F2E;
     border-radius: 24px;
 	transition: all ease .5s;
 	border: none;
