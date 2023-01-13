@@ -110,7 +110,7 @@ const AboutContact = () => {
                     <label className="lbl" htmlFor='messageInput'>Your Message</label>
                     <textarea id="messageInput" name="message" value={formValue.message} onChange={handleChange} ></textarea>
                 </div>
-                <div className="form-group flex-center no-margin">
+                <div className="form-group align-start no-margin">
                     <button className="btn" type="submit">Send Message</button>
                 </div>
             </form>

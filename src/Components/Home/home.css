@@ -436,6 +436,7 @@
     background-color: var(--prime-white);
     box-shadow: 0px 16px 40px rgb(101 112 137 / 8%);
     border-radius: 24px;
+    z-index: 1;
 }
 .seven-section .vs--cform{
     color: #000;
@@ -910,6 +911,8 @@
     .vs-home-sec.eight-section{
         padding-left: 150px;
         padding-right: 150px;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 }
 @media (min-width: 1365.5px){

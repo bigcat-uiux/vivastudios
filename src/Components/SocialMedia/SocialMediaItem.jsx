@@ -22,26 +22,34 @@ export const SocialMediaItem = () => {
 
     return(
         <div className="vs-icons-group socmed">
-            <Link
-                className="vs--icons-items"
-                to={data.acfOptionsSocialMedia.socialMediaSettings.socmedFb}
-            >
-                <span className="socmed-fb"></span>
-            </Link>
 
-            <Link
+            <a
                 className="vs--icons-items"
-                to={data.acfOptionsSocialMedia.socialMediaSettings.socmedIg}
-            >
-                <span className="socmed-ig"></span>
-            </Link>
-
-            <Link
-                className="vs--icons-items"
-                to={data.acfOptionsSocialMedia.socialMediaSettings.socmedTwit}
+                href={data.acfOptionsSocialMedia.socialMediaSettings.socmedTwit}
+                rel="noreferrer"
+                target="_blank"
+                aria-label='Twitter'
             >
                 <span className="socmed-twit"></span>
-            </Link>
+            </a>
+            <a
+                className="vs--icons-items"
+                href={data.acfOptionsSocialMedia.socialMediaSettings.socmedFb}
+                rel="noreferrer"
+                target="_blank"
+                aria-label='Facebook'
+            >
+                <span className="socmed-fb"></span>
+            </a>
+            <a
+                className="vs--icons-items"
+                href={data.acfOptionsSocialMedia.socialMediaSettings.socmedIg}
+                rel="noreferrer"
+                target="_blank"
+                aria-label='Instagram'
+            >
+                <span className="socmed-ig"></span>
+            </a>
         </div>
     )
 }
