@@ -48,7 +48,7 @@ const NavMenuQuery = (props) => {
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/about-viva">About Viva</CustomLink>
         <CustomLink to="/games">Games</CustomLink>
-        <CustomLink to="/news">Newx</CustomLink>
+        {/* <CustomLink to="/news">Newx</CustomLink> */}
         {/* {
             props.menuData.nodes.map((menuItem, key) => {
                 const label = menuItem.label;

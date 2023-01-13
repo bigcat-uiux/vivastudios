@@ -74,6 +74,10 @@
     line-height: 24px;
     margin: 0;
 }
+.home-page .btnWrap a{
+    color: var(--prime-white) !important;
+    text-decoration: none;
+}
 
 /*Section: Hero*/
 
@@ -194,6 +198,21 @@
 }
 
 /*Section: Third*/
+.third-section{
+    position: relative;
+}
+.third-section::before{
+    background: url('../Home/images/third-img.png') no-repeat;
+    content: '';
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: right top;
+    z-index: -1;
+}
 .third-section .vs-sec-content.flex{
     flex-direction: column;
 }
@@ -387,7 +406,20 @@
 /*Section: Seven*/
 .seven-section{
     background-color: var(--second-853);
-    color: var(--prime-white)
+    color: var(--prime-white);
+    position: relative;
+}
+.seven-section::before{
+    background: url('../Home/images/vivabg-5th.png') no-repeat;
+    background-position: center right;
+    content: '';
+    display: none;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom:0;
+    width: 100%;
 }
 .home-page .seven-section .sec-title{
     color: var(--prime-white);
@@ -794,7 +826,18 @@
         justify-content: flex-end;
     }
 
+    /*Section: Second*/
+    .home-page .second-section .vs-sec-content .page-content{
+        margin-bottom: 24px;
+    }
+    .home-page .second-section .btnWrap{
+        justify-content: flex-start;
+    }
+
     /*Section: Third*/
+    .third-section::before{
+        display: block;
+    }
     .third-section .vs-sec-content{
         align-items: flex-start;
     }
@@ -810,8 +853,18 @@
     .third-section .vs-icon-grp{
         grid-gap: 11px;
     }
+    .third-section .vs--icons-lbl.lbl{
+        width: 150px;
+    }
 
     /*Section: Fourth*/
+    .fourth-section .vs-home-sec{
+        padding-bottom: 100px;
+        padding-top: 100px;
+    }
+    .fourth-section .vs-sec-header .vs-sec-desc{
+        width: 850px;
+    }
     .fourth-section .vs-icon-grp{
         grid-gap: 24px;
         padding: 0;
@@ -840,6 +893,11 @@
     /*Section: Sixth*/
     .sixth-section .vs-posts-list .vs--cards{
         height: 216px;
+    }
+
+    /*Section: Seven*/
+    .seven-section::before{
+        display: block;
     }
 
     /*Section: Eight*/
@@ -887,5 +945,6 @@
     /* ADDED TO THE SUITE HOMEPAGE */
     .fifth-section .vs--prod-item:hover {
         transform: scale(1.02);
+        filter: drop-shadow(0px 32px 60px rgba(41, 44, 109, 0.4));
     }
 }
