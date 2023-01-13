@@ -457,11 +457,19 @@ a.btn{
 .btn.disabled{
 	background-color: #E3E6EE;
 }
-.btn-transparent{
+.btn-transparent,
+a.btn-transparent{
 	background-color: transparent;
 	border-color: var(--prime-white);
 	border: none;
 	outline: 1px solid var(--prime-white);
+	text-decoration: none;
+}
+a.btn-transparent:visited,
+a.btn-transparent:active,
+a.btn-transparent:hover,
+a.btn-transparent:focus{
+	color: var(--prime-white);
 }
 
 /*--------------------------------------------------------------
@@ -546,8 +554,11 @@ main.main-wrap{
     line-height: 36px;
 	margin:0;
 }
-
+.Game .all-games-card a{
+	display: block;
+}
 .Game .all-games-card img{
+	border-radius: 16px;
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
@@ -1045,6 +1056,10 @@ ul.widget > li {
 	.Game .all-games-card{
 		height: 100%;
 		width: 18.3%;
+	}
+	.Game .all-games-card a{
+		height: 228px;
+    	width: 100%;
 	}
 	.Game .sub-page-title{
 		font-size: 24px;

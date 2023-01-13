@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 const GET_FIFTH_QUERY = gql `
     query HomePage {
@@ -93,6 +94,7 @@ const SectionContent = ({ group, button }) => {
                 <div className="vs-prod-grp flex">
                     {
                         group.map((prod, key) => {
+                            console.log(prod)
                             return (
                                 <div className="vs--prod-item" key={key}>
                                     { prod.featuredImage ? (
@@ -103,8 +105,8 @@ const SectionContent = ({ group, button }) => {
                                         ) : null}
                                         <div className="vs--hidden-prod">
                                             <div className="vs--hidden-btn flex flex-column justify-center">
-                                                <button className="btn">Play Details</button>
-                                                <button className="btn btn-transparent">view Demo</button>
+                                                <button className="btn">Play Demo</button>
+                                                <Link className="btn btn-transparent" to={`/games/${prod.slug}`}>view Details</Link>
                                             </div>
                                         </div>
                                 </div>
@@ -125,7 +127,7 @@ const SectionContent = ({ group, button }) => {
 const SectionBTN = () => {
     return (
         <>
-            <button className="btn">Explore our games!</button>
+            <Link className="btn" to={`/games`}>Explore our games!</Link>
         </>
     )
 }

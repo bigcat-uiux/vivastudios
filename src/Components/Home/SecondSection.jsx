@@ -1,5 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 const GET_SECOND_QUERY = gql `
     query HomePage {
@@ -120,7 +121,7 @@ const SectionContent = ({ title, desc, image, content, button }) => {
 const SectionBTN = () => {
     return (
         <>
-            <button className="btn">Email Us</button>
+            <Link className="btn" to={`/about-viva`}>Email Us</Link>
         </>
     )
 }
