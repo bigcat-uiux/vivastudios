@@ -18,7 +18,7 @@
     background-color:var(--prime-white);
     box-shadow: 0px 16px 40px rgb(101 112 137 / 8%);
     border-radius: 16px;
-    padding: 24px;
+    padding: 24px 24px;
 }
 
 /*Fonts*/
@@ -173,6 +173,7 @@
     object-fit: fill;
     height: 252px;
     transition: all ease .5s;
+    border-radius: 16px;
 }
 .banner svg{
     display: none;
